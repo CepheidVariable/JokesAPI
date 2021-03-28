@@ -24,5 +24,10 @@ module.exports = {
         )
             .then(data => res.json({ results: data }))
             .catch(err => res.status(404).json({errors: err.errors}))
+    },
+    delete: (req, res) => {
+        Joke.deleteOne({_id: req.params.id})
+        .then(data => res.json({results: data}))
+        .catch(err => res.status(404).json({errors: err.errors}))
     }
 };
