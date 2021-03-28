@@ -5,13 +5,29 @@ const express = require('express'),
     cors = require('cors');
 
 
-const storage = [];
-
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({"extended":true}));
+
+// representation of our DB config file
+require('./server/config/database.config');
+
+// representation of routes file export - annonymous function
+// anonFunction(app)
+require('./server/routes/joke.routes')(app);
+// alternative method:
+// const routes = require('./server/routes/joke.routes');
+// routes(app);
+
+
+
+
 
 // Testing routes
 // =============================
+
+// const storage = [];
+
 // app.get('/', (req, res) => {
 //     res.json({result: "success"});
 // })
