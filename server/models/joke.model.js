@@ -16,3 +16,5 @@ const JokeSchema = new mongoose.Schema({
 
 // Creates instance of a Joke collection (i.e. document)
 const Joke = new mongoose.model("Joke", JokeSchema);
+
+module.exports = Joke;
