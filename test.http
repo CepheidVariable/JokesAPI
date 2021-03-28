@@ -1,4 +1,18 @@
+GET http://localhost:8000/api/jokes HTTP/1.1
 
+###
+
+GET http://localhost:8000/api/jokes/0 HTTP/1.1
+
+###
+
+POST http:localhost:8000/api/jokes HTTP/1.1
+Content-Type: application/json
+
+{
+    "prompt": "How did the neutron feel about his neighbors?",
+    "punchline": "Neutral"
+}
 
 
 
