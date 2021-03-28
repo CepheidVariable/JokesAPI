@@ -15,5 +15,10 @@ module.exports = {
         Joke.find({_id: req.params.id})
             .then(data => res.json({results: data}))
             .catch(err => res.status(404).json({errors: err.errors}))
-}
+    },
+    update: (req, res) => {
+        Joke.update({_id: req.params.id}, overwrite = true, runValidators = true)
+            .then(data => res.json({results : data}))
+            .catch(err => res.status(404).json({errors: err.errors}))
+    }
 };
