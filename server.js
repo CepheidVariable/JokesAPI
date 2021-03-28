@@ -4,7 +4,6 @@ const express = require('express'),
     server = app.listen(port, () => console.log(`Listening on port ${port}...`)),
     cors = require('cors');
 
-const mongoose = require('mongoose');
 
 const storage = [];
 
