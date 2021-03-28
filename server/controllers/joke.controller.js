@@ -1,7 +1,7 @@
 const Joke = require("../models/joke.model");
 
 module.exports = {
-    idnex: (req, res) => {
+    index: (req, res) => {
         Joke.find()
             .then(data => res.json({results: data}))
             .catch(err => res.status(404).json({errors: err.errors}))
